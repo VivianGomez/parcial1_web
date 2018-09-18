@@ -1,0 +1,19 @@
+{
+  "name": "parcial1",
+  "version": "0.0.1",
+  "description": "Este es mi template para el parcial 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VivianGomez/parcial1_web.git"
+  },
+  "author": "Vivian Natalia Gómez Cubillos",
+  "license": "MIT",
+  "homepage": "https://github.com/VivianGomez/parcial1_web#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
