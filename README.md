@@ -6,6 +6,8 @@ Para correr el back, específicamente express, ejecutar en la consola:
 
 `
 npm install
+`
+`
 nodemon o npm start
 `
 
@@ -15,6 +17,8 @@ Para correr el front,  ejecutar en otra consola:
 
 `
 npm install
+`
+`
 npm start
 `
 
