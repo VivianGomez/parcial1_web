@@ -1,8 +1,6 @@
 # Parcial 1 dev_web
 
-### Para correr la app
-
-# Running the app
+### Running the app
 
 Follow this instructions to run the app locally
 
@@ -39,4 +37,4 @@ You will can see the app on http://localhost:3000
 ## Author: Vivian Gómez Cubillos
 
 
-You can also deploy it in https://web-dev-exam1.herokuapp.com/, withoud downloads
+You can also deploy it in https://web-dev-exam1.herokuapp.com/, without downloads
