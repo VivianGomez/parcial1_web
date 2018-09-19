@@ -2,21 +2,41 @@
 
 ### Para correr la app
 
-Para correr el back, específicamente express, ejecutar en la consola:
+# Running the app
+
+Follow this instructions to run the app locally
+
+## Prerequisites
+```
+Node JS
+Git
+MongoDB
+```
+
+Clone or download the project and from the source folder:
+```
+cd PATH_DIR_CLONED
+npm install
+nodemon or npm install
+cd client
+npm install
+npm start
+cd ..
+
+don't forget set an env variable 'url' to the access url of your mongoDB (with credentials)
+```
+You will can see the app on http://localhost:3000
+
+## Built With
+
+* [Node JS](https://nodejs.org/es) 
+* [React JS](https://facebook.github.io/react/)
+* Express JS
+* Heroku 
+* MongoDB
+* HTML
+
+## Author: Vivian Gómez Cubillos
 
 
-1) npm install
-
-2) nodemon o npm start
-
-
-nodemon es un módulo que permite ver los cambios realizados en el back sin tener que volver a ejecutar el archivo index.js
-
-Para correr el front,  ejecutar en otra consola:
-
-
-1) npm install
-2) npm start
-
-
-O simplemente en https://web-dev-exam1.herokuapp.com/, si no se quiere descargar nada y sólo se quiere ver la app.
+You can also deploy it in https://web-dev-exam1.herokuapp.com/, withoud downloads
