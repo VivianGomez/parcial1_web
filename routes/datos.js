@@ -5,7 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 module.exports = router => {
 
-// Metodos CRUD, para el API
+ Metodos CRUD, para el API
 
   return router;
 };
