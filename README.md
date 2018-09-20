@@ -21,7 +21,7 @@ npm install
 npm start
 cd ..
 
-don't forget set an env variable 'url' to the access url of your mongoDB (with credentials)
+don't forget set an env variable 'url' to the access url of your mongoDB (with credentials), in .env file
 ```
 You will can see the app on http://localhost:3000
 

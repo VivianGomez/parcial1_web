@@ -25,9 +25,8 @@ const port = process.env.PORT || 3001;
 // API route
 const apiRoute = "/parcial1/";
 
-// API routes of movies
-//const movies = require('./routes/movies')(router);
-const movies = require('./routes/parcial1')(router);
+//const datos = require('./routes/datos')(router);
+const datos = require('./routes/parcial1')(router);
 
 // JSON body request is configured
 app.use(
@@ -48,7 +47,7 @@ app.use(
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
 // Movies routes are used
-app.use(apiRoute, movies);
+app.use(apiRoute, datos);
 
 // Connection to front
 app.get('*', function (request, response) {

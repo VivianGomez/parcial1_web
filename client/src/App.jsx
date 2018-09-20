@@ -11,6 +11,7 @@ class App extends Component {
 				</header>
 				<p>
 					Este es mi template para el parcial 1 de Web.
+					- Vivian Gómez
 				</p>
 			</div>
 		);
