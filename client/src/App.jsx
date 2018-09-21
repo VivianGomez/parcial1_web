@@ -11,12 +11,12 @@ class App extends Component {
     let fileReader;
     this.handleChangeData = this.handleChangeData.bind(this);
     this.handleChangeMark = this.handleChangeMark.bind(this);
-
+    this.handleChangeData = this.handleChangeData.bind(this);
+    
     this.state=
     {
       data:{ a: 'A', b: 28 },
       error: 'Todo va bien',
-      mark:'bar',
       vis : {
        $schema: 'https://vega.github.io/schema/vega-lite/v2.json',
        description: 'A simple bar chart with embedded data.',
@@ -48,6 +48,9 @@ handleChangeMark(event) {
     this.setState({ mark:event.target.value});
     console.log("EVENT "+event.target.value+" MARK "+this.state.mark);
 }
+   };
+}
+
 
 handleChangeData(event){
   try{ 

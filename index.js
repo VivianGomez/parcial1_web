@@ -26,7 +26,7 @@ const port = process.env.PORT || 8080;
 const apiRoute = "/api/";
 
 // API routes of data
-const movies = require('./routes/visualizaciones')(router);
+const datos = require('./routes/visualizaciones')(router);
 
 // JSON body request is configured
 app.use(
@@ -46,8 +46,8 @@ app.use(
 // Route of static files is defined
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
-// Movies routes are used
-app.use(apiRoute, movies);
+// datos routes are used
+app.use(apiRoute, datos);
 
 // Connection to front
 app.get('*', function (request, response) {
