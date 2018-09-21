@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import vegaEmbed from 'vega-embed';
+import ReactFileReader from 'react-file-reader';
 import './App.css';
 //[{"a":"A","b":"28"}, {"a":"B","b":"55"}, {"a": "C","b":"43"},{"a": "D","b":"91"},{"a":"E","b":"81"},{"a":"F","b": "53" },{"a": "G", "b": "19" },{ "a": "H", "b": "87" },{ "a": "I", "b": "52" }]
 
@@ -11,12 +12,14 @@ class App extends Component {
     let fileReader;
     this.handleChangeData = this.handleChangeData.bind(this);
     this.handleChangeMark = this.handleChangeMark.bind(this);
-    this.handleChangeData = this.handleChangeData.bind(this);
-    
+    this.handleFile = this.handleFile.bind(this);
+    this.handleFileRead = this.handleFileRead.bind(this);
+
     this.state=
     {
       data:{ a: 'A', b: 28 },
       error: 'Todo va bien',
+      mark:'bar',
       vis : {
        $schema: 'https://vega.github.io/schema/vega-lite/v2.json',
        description: 'A simple bar chart with embedded data.',
@@ -48,9 +51,6 @@ handleChangeMark(event) {
     this.setState({ mark:event.target.value});
     console.log("EVENT "+event.target.value+" MARK "+this.state.mark);
 }
-   };
-}
-
 
 handleChangeData(event){
   try{ 
@@ -79,6 +79,18 @@ handleChangeData(event){
   }
 }
 
+
+handleFileRead(e){
+  //const content = fileReader.result;
+  //console.log(content);
+}
+
+
+handleFile(file){
+  //fileReader = new FileReader();
+  //fileReader.onloadend = handleFileRead;
+  //fileReader.readAsText(file);
+}
 
 render() {
   return (
@@ -129,7 +141,6 @@ render() {
             </select>
          </div>
         <div ref={(div)=> this.imagen=div}></div>
-        <button></button>
       </div> 
      </div> 
     </div>
