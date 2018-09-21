@@ -8,7 +8,6 @@ if (fs.existsSync('client/build')) {
     process.env.databaseName = 'parcial1';
 } else {
     process.env.NODE_ENV = 'development';
-    //process.env.databaseUri = 'mongodb://localhost:27017' 
-    process.env.databaseUri = 'mongodb://admin:parcial1@ds261342.mlab.com:61342/parcial1';
+    process.env.databaseUri = 'mongodb://localhost:27017' 
     process.env.databaseName = 'parcial1';
 }
