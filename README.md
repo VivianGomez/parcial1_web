@@ -1,8 +1,10 @@
-# Parcial 1 dev_web
+# Exam 1 : Minimalist version of vega-lite editor 
+
+## Author: Vivian Gómez Cubillos
 
 ### Running the app
 
-Follow this instructions to run the app locally
+To run the app locally:
 
 ## Prerequisites
 ```
@@ -29,12 +31,8 @@ You will can see the app on http://localhost:3000
 
 * [Node JS](https://nodejs.org/es) 
 * [React JS](https://facebook.github.io/react/)
-* Express JS
-* Heroku 
-* MongoDB
-* HTML
-
-## Author: Vivian Gómez Cubillos
-
+* [Express JS](https://expressjs.com/)
+* [Heroku](https://dashboard.heroku.com/) 
+* [MongoDB](https://docs.mongodb.com/)
 
 You can also deploy it in https://web-dev-exam1.herokuapp.com/, without downloads

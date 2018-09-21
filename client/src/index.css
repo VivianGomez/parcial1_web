@@ -1,5 +1,19 @@
+.pointer {
+    cursor: pointer;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.bg-dark-blue {
+    background-color: darkblue;
+}
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
 }
