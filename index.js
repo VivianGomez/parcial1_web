@@ -23,10 +23,10 @@ const path = require('path');
 const port = process.env.PORT || 8080;
 
 // API route
-const apiRoute = "/parcial1/";
+const apiRoute = "/api/";
 
 // API routes of data
-const movies = require('./routes/datos')(router);
+const movies = require('./routes/visualizaciones')(router);
 
 // JSON body request is configured
 app.use(
