@@ -1,28 +1,42 @@
 {
-  "name": "parcial1",
-  "version": "0.0.1",
-  "description": "Este es mi template para el parcial 1",
+  "name": "Exam 1",
+  "version": "1.0.0",
+  "author": "Vivian Gómez",
+  "license": "MIT",
+  "description": "Exam 1 dev web",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index",
-    "dev": "nodemon index",
     "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
+  "engines": {
+    "node": "8.11.1"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
+  "keywords": [
+    "MongoDB",
+    "React JS",
+    "Express",
+    "Node JS"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VivianGomez/parcial1_web.git"
+    "url": "https://github.com/VivianGomez/parcial1_web"
   },
-  "author": "Vivian Natalia Gómez Cubillos",
-  "license": "MIT",
-  "homepage": "https://github.com/VivianGomez/parcial1_web#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "mongodb": "^3.1.6",
-    "mongoose": "^5.2.12"
+    "mongodb": "^3.1.6"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "eslint": "^5.6.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
   }
 }
