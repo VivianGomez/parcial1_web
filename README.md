@@ -35,4 +35,6 @@ You will can see the app on http://localhost:3000
 * [Heroku](https://dashboard.heroku.com/) 
 * [MongoDB](https://docs.mongodb.com/)
 
-You can also deploy it in https://web-dev-exam1.herokuapp.com/, without downloads
+Creative Edition -- Friendly change of the graph type since UI
+
+You can also deploy it in https://web-dev-parcial1.herokuapp.com/, without downloads
