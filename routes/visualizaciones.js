@@ -2,19 +2,16 @@
 const config = require("../configurations/database");
 const MongoClient = require('mongodb').MongoClient;
 
-function obtenerFecha() {
-  let fecha = new Date();
-
-  let anio = fecha.getFullYear();
-
-  let mes = fecha.getMonth() + 1;
-  mes = (mes < 10 ? "0" : "") + mes;
-
-  let dia = fecha.getDate();
-  dia = (dia < 10 ? "0" : "") + dia;
-
-  return dia + "/" + mes + "/" + anio;
+function doConnect() {
+    MongoClient.connect(config.uri, (err, db) => {
+        if(err) { 
+            throw err
+        } else {
+            console.log('Successfully connected to MongoDB')
+        }
+    })
 }
+doConnect();
 
 module.exports = router => {
 
@@ -41,7 +38,7 @@ module.exports = router => {
         if (!vis) {
           res.json({
             exito: false,
-            mensaje: 'TNo se encontró una visualización con el titulo ' + titulo
+            mensaje: 'No se encontró una visualización con el titulo ' + titulo
           });
         } else {
           res.json({
@@ -113,25 +110,19 @@ module.exports = router => {
         exito: false,
         mensaje: 'Se necesita un nombre de usuario para la visualización'
       });
-    } else if (!timestamp) {
-      res.json({
-        exito: false,
-        mensaje: 'Se necesita un timestamp para la visualización'
-      });
-    } else if (!datosGrafica) {
+    }  else if (!datosGrafica) {
       res.json({
         exito: false,
         mensaje: 'Se necesitan los datos a graficar'
       });
     } else {
-
       MongoClient.connect(config.uri, {
         useNewUrlParser: true
       }, (err, client) => {
         if (err) {
           res.json({
             exito: false,
-            mensaje: 'Error ' + err
+            mensaje: ' ' + err
           });
         } else {
           let db = client.db(config.db);
@@ -141,15 +132,15 @@ module.exports = router => {
           let newVis = {
             titulo: titulo,
             nombreUsuario: nombreUsuario,
-            timestamp: obtenerFecha(),
+            timestamp: new Date(),
             datosGrafica: datosGrafica
           };
 
-          visCol.insertOne(newVis, (error, response) => {
+          visCol.insertOne(newVis, (err, response) => {
             if (err) {
               res.json({
                 exito: false,
-                mensaje: 'Error ' + error
+                mensaje: 'Error ' + err
               });
             } else {
               res.json({
