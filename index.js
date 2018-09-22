@@ -28,6 +28,9 @@ const apiRoute = "/api/";
 // API routes of data
 const datos = require('./routes/visualizaciones')(router);
 
+const ratings = require('./routes/ratings')(router);
+
+
 // JSON body request is configured
 app.use(
     bodyParser.json({
@@ -48,6 +51,7 @@ app.use(express.static(path.resolve(__dirname, 'client/build')));
 
 // datos routes are used
 app.use(apiRoute, datos);
+app.use(apiRoute, ratings);
 
 // Connection to front
 app.get('*', function (request, response) {

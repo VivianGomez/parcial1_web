@@ -68,6 +68,7 @@ class GuardarVisualizacion extends Component {
     .then(res => {
       let exito = res.data.exito;
       console.log("EXITO", exito)
+      alert("Se  guardó la visualización");
       if (!exito) {
         errores.push(
           <p>
@@ -84,6 +85,7 @@ class GuardarVisualizacion extends Component {
       console.log(error);
     });
   } else {
+    alert("No se pudo guardar la visualización");
     console.log(errores)
     this.setState({
       error: errores
@@ -142,26 +144,26 @@ render() {
         <div className="modal-body">
           <form onSubmit={this.handleSubmit}>
            <div className="form-group">
-            <label htmlFor="registroInputTitulo">
+            <label htmlFor="guardarInputTitulo">
              <b>Titulo visualización</b>
             </label>
              <input
               type="text"
               className="form-control"
-              id="registroInputTitulo"
+              id="guardarInputTitulo"
               value={this.state.value}
               onChange={this.handleChangeTitulo}
               required
              />
             </div>
         <div className="form-group">
-           <label htmlFor="registroInputUsuario">
+           <label htmlFor="guardarInputUsuario">
             <b>Nombre de usuario</b>
            </label>
            <input
              type="text"
              className="form-control"
-             id="registroInputUsuario"
+             id="guardarInputUsuario"
              value={this.state.value}
              onChange={this.handleChangeNombreDeUsuario}
              required
@@ -169,7 +171,7 @@ render() {
          </div>
             <center>
             {this.mostrarError()}
-             <button type="submit" className="btn btn-success">
+             <button type="submit" className="btn btn-primary">
               Guardar
              </button>
             </center>

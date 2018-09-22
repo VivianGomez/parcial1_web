@@ -22,6 +22,7 @@ constructor(props){
 
     this.state =
     {
+      guardado: false,
       calificaciones: [],
       crearCalificacion: false,
       error: 'Todo va bien',
@@ -72,8 +73,8 @@ constructor(props){
       axios
         .post(this.apiRatings, {
           tituloVisualizacion: this.state.tituloVisualizacion,
-          nombreDeUsuario: this.state.usuario.nombreDeUsuario,
-          calificacion: this.state.calificacion 
+          nombreUsuario: this.state.usuario.nombreUsuario,
+          calificacion: this.state.calificacionSeleccionada 
         })
         .then(res => {
           let exito = res.data.exito;
@@ -158,18 +159,41 @@ constructor(props){
     vegaEmbed(this.imagen, this.state.vis,{defaultStyle: true}).catch(console.war) 
   }
 
-mostrarSeccionGuardarVis() {
-      return(
-          <button
-            id="botonParaRegistrarse"
-            className="nav-link pointer"
-            data-toggle="modal"
-            data-target="#registroModal"
-          >
-            Guardar
-          </button>
+
+
+
+
+  //obtenerCalificaciones() {
+    //axios.get(this.apiRatings + '/tituloVisualizacion/' + this.state.).then(res => {
+      //const exito = res.data.exito;
+      //if (exito) {
+      //  this.setState({
+      //    comentarios: res.data.comentarios
+      //  });
+    //  }
+    //});
+  //}
+
+  mostrarCalificaciones() {
+    if (this.state.calificaciones.length > 0) {
+      let calificacionesVis = [];
+      this.state.calificaciones.forEach(calificacion => {
+        calificacionesVis.push(
+          <Calificacion  calificacion={calificacion}
+          />
+        );
+      });
+
+      return calificacionesVis;
+    } else {
+      return (
+        <div className="alert alert-info mx-auto mt-4" role="alert">
+          Aún no hay calificaciones para el proyecto en cuestión. Te invitamos a
+          que <b>comentes sobre el</b>.
+        </div>
       );
     }
+  }
 
 
   render() {
@@ -194,12 +218,12 @@ mostrarSeccionGuardarVis() {
                <input 
                type="file" 
                id="fileinput"
-               className="input-file"
+               className="input-file "
                accept=".csv"
                value={this.state.file}
                onChange={ this.handleChangeFile }
                />
-               &nbsp;&nbsp;<button onClick={this.actualizar}>Graficar!</button>
+               &nbsp;&nbsp;<button className="btn btn-primary" onClick={this.actualizar}>Graficar!</button>
              </div>
           </div>
 
@@ -223,13 +247,13 @@ mostrarSeccionGuardarVis() {
           <br/>
          <div>
           <button
-            id="botonParaRegistrarse"
-            className="nav-link pointer"
+            id="guardar"
+            className="btn btn-primary"
             data-toggle="modal"
             data-target="#registroModal"
           > Guardar
           </button>
-           <GuardarVisualizacion  datosG={this.state.vis}/>
+           <GuardarVisualizacion  datosG={this.state.vis} error={this.state.error}/>
          </div>
      </div> 
    </div> 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 import Visualizacion from './components/Visualizacion';
 import Visualizaciones from './components/Visualizaciones';
@@ -21,7 +22,7 @@ class App extends Component {
         </div>
         <div className="container">
           <Visualizaciones/>
-        </div>    
+        </div>   
       </div>
       );
   }
